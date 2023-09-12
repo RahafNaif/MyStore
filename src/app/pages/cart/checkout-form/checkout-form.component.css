@@ -1,0 +1,26 @@
+form {
+    margin-left: 50px;
+}
+
+form p {
+    margin-bottom: 5px;
+}
+
+form input {
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+.message {
+    color: gray;
+    font-size: 15px;
+}
+
+.error {
+    color: red;
+}
+
+.input {
+    width: 380px;
+    text-align: center;
+}

@@ -1,0 +1,24 @@
+<div *ngIf="!isEmpty; else noCart" class="container-fluid cart-container">
+    <div class="cart-panel">
+        <div *ngFor="let product of cartList" class="cart-item">
+            <img src="{{ product.url }}" alt="product">
+            <div class="cart-item-details">
+                <p>{{ product.name }}</p>
+                <p>{{ product.price }}</p>
+                <label>Amount:</label>
+                <input type="number" max="5" min="1" ngModel="{{ product.quantity }}" (ngModelChange)="onChangeAmount($event, product)">
+                <button class="btn btn-danger mt-1" (click)="removeProduct(product.id)">Delete</button>
+            </div>
+        </div>
+        <h3>Total: {{ total }}</h3>
+    </div>
+    <div class="cart-panel">
+        <app-checkout-form (successPayment)="onSuccessPayment($event)"></app-checkout-form>
+    </div>
+</div>
+<ng-template #noCart>
+    <div class="empty">
+        <p>The Cart is Empty</p>
+        <a routerLink="/">Back to Product list and Add products</a>
+    </div>
+</ng-template>

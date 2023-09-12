@@ -1,0 +1,25 @@
+.header {
+    text-align: center;
+    background: #33B5E5;
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.menu {
+    justify-content: space-between;
+    display: flex;
+    padding: 8px;
+    width: 13%;
+}

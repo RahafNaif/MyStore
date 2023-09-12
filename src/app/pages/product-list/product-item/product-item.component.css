@@ -1,0 +1,30 @@
+.product-item {
+    width: 260px;
+    height: 550px;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+
+.product-item img {
+    width: 260px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.select-input {
+    width: 108px; 
+}
+
+.info, form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: black;
+}
+
+.info span {
+    margin-top: 10px;
+}

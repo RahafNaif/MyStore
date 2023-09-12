@@ -1,0 +1,43 @@
+<form (ngSubmit)="onSubmit(formInfo)" #formInfo="ngForm">
+    <p>Full name</p>
+    <input type="text" name="name" minlength="3" maxlength="50" required placeholder="(Minimum 3 characters)" ngModel #name="ngModel" class="input">
+    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="mb-3 error">
+        <span *ngIf="name.errors?.['required']">
+            Name is required.
+        </span>
+        <div *ngIf="name.errors?.['minlength']">
+            Name must be at least 4 characters long.
+        </div>
+        <div *ngIf="name.errors?.['maxlength']">
+            Name must be at most 50 characters long.
+        </div>
+    </div>
+    <p>Address</p>
+    <input type="text" name="address" minlength="6" maxlength="100" required placeholder="(Minimum 6 characters)" ngModel #address="ngModel" class="input">
+    <div *ngIf="address.invalid && (address.dirty || address.touched)" class="mb-3 error">
+        <span *ngIf="address.errors?.['required']">
+            Address is required.
+        </span>
+        <div *ngIf="address.errors?.['minlength']">
+            Address must be at least 6 characters long.
+        </div>
+        <div *ngIf="address.errors?.['maxlength']">
+            Address must be at most 100 characters long.
+        </div>
+    </div>
+    <p>Credit card number</p>
+    <input type="number" name="card" min="1000000000000000" max="9999999999999999" required placeholder="(16 digits number)" ngModel #cardNumber="ngModel" class="input">
+    <div *ngIf="cardNumber.invalid && (cardNumber.dirty || cardNumber.touched)" class="mb-3 error">
+        <span *ngIf="cardNumber.errors?.['required']">
+            Card number is required.
+        </span>
+        <div *ngIf="cardNumber.errors?.['min']">
+            Card number must be 16 characters long.
+        </div>
+        <div *ngIf="cardNumber.errors?.['max']">
+            Card number must be 16 characters long.
+        </div>
+    </div>
+    <p class="message">We'll never share your payment information with anyone.</p>
+    <input type="submit" value="Submit" class="btn btn-primary" [disabled]="formInfo.invalid">
+</form>
